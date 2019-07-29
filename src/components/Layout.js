@@ -23,6 +23,16 @@ function Layout({ children }) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
+              <Link className="nav-link" to="/createsurvey">
+                Create Survey
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/editprofile">
+                Edit Profile
+              </Link>
+            </li>
+            <li className="nav-item active">
               <Link className="nav-link" to="/">
                 Home
               </Link>
@@ -30,6 +40,26 @@ function Layout({ children }) {
             <li className="nav-item active">
               <Link className="nav-link" to="/signin">
                 Sign-In
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/signup">
+                Sign-Up
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/surveylist">
+                Survey List
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/takesurvey">
+                Take Survey
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/userhome">
+                User Homepage
               </Link>
             </li>
           </ul>
