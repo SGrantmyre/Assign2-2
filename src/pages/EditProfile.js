@@ -7,14 +7,14 @@ function EditProfile() {
     <Layout>
         <div>Edit Profile:</div>
         <form>
-            New Username:<br>
-            <input type="text" name="n-username"><br>
-            New Email:<br>
-            <input type="text" name="n-email"><br>
-            Previous Password:<br>
-            <input type="password" name="p-password"><br>
-            New Password:<br>
-            <input type="password" name="n-password"><br>
+            New Username:<br></br>
+            <input type="text" name="n-username"></input><br></br>
+            New Email:<br></br>
+            <input type="text" name="n-email"></input><br></br>
+            Previous Password:<br></br>
+            <input type="password" name="p-password"></input><br></br>
+            New Password:<br></br>
+            <input type="password" name="n-password"></input><br></br>
             <button type="submit">Submit Changes</button>
         </form>
     </Layout>
