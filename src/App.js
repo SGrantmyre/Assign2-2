@@ -9,8 +9,15 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <CreateSurvey path = '/createsurvey' />
+        <EditProfile path = '/editprofile' />
         <Home path = '/' />
         <SignIn path = '/signin' />
+        <SignUp path = '/signup' />
+        <SurveyList path = '/surveylist'/>
+        <SurveyResults path = '/surveyresults'/>
+        <TakeSurvey path = '/takesurvey'/>
+        <UserHome path = '/userhome'/>
       </Router>
     </div>
   );
