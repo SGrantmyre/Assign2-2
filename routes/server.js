@@ -17,6 +17,8 @@ db.on('error', e => console.error(e));
 db.once('open', () => console.log('Mongoose connected successfully'));
 
 const app = express();
+const router = express.Router();
+
 
 //prepare application to use cookies and json
 app.use(bodyParser.urlencoded({extended: false}));
@@ -32,19 +34,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'pages')));
 
-//POST route for creating a user
-app.post('../pages/Sign-Up', function(req,res){
-    const {username, email, password} = req.body;
-    const user = new User({
-        username, email, password});
-    user.save(function(e){
-        if(e){
-            res.status(500).send("Sorry, error in registering new user, please try again.")
-        }else{
-            res.status(200).send(`Welcome ${username}`);
-        }
+getUsers = () => {
+    axios.get('http://localhost:3000/api/getUser').then(({ data }) => {
+      console.log(data)
+      this.setState({ user: data })
     });
-});
+    
+    fetch('http://localhost:3000/api/getUser')
+       .then((user) => user.json())
+       .then((res) => this.setState({user: res.data}));
+};
+
+//Put Method
+   putUser = (message) => {
+      const { username, email, password } = this.state;
+      let currentUsers = this.state.data.map((data) => data.id);
+       const user = new User({
+       username, email, password});
+     axios.post('http://localhost:3000/api/putUser', {
+       username: username,
+       email: email,
+       password: password
+     });
+   }
 
 //Authentication Setup
 
@@ -60,10 +72,10 @@ app.use(function(req, res, next) {
   // error handler
   app.use(function(e, req, res, next) {
     res.locals.message = e.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    res.locals.error = req.app.get('env') === 'development' ? e : {};
   
     // render the error page
-    res.status(err.status || 500);
+    res.status(e.status || 500);
     res.render('error');
   });
   
