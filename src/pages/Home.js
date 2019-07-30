@@ -5,15 +5,13 @@ import CheckBox from "../components/Checkbox";
 import Layout from '../components/Layout';
 import RadioGroup from '../components/RadioGroup';
 import CheckboxGroup from '../components/CheckboxGroup';
+import Question from '../components/Question';
 
 function Index() {
-  var array = ["one","two","three"];
   return (
     <Layout>
       <div>Home Page</div>
-      <Dropdown label="text" options={array}/> 
-      <RadioGroup options={array}/> 
-      <CheckboxGroup options={array}/>
+      <Question question="Question?" comp_id={1} options={["1","2","3","4"]}/>
     </Layout>
     );
 }

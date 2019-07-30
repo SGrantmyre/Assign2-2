@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 function SurveyList() {
   return (
     <Layout>
-        <div>SurveyList</div>
+        <h1>SurveyList</h1>
     </Layout>
   );
 }

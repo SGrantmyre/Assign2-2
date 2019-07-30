@@ -7,12 +7,13 @@ class Dropdown extends React.Component{
     this.state = {
       options: this.props.options || []
     } 
+ 
   }
   
   //function onChange(e) {}
   render(){
     var dropdownOptions = this.props.options.map((option) =>
-    <option value={option} key={option} >{option}</option>
+    <option value={option} >{option}</option>
     ); 
     return (
     <select>
