@@ -3,15 +3,17 @@ import Dropdown from "../components/Dropdown";
 import RadioButton from "../components/RadioButton";
 import CheckBox from "../components/Checkbox";
 import Layout from '../components/Layout';
+import RadioGroup from '../components/RadioGroup';
+import CheckboxGroup from '../components/CheckboxGroup';
 
 function Index() {
-  var array = [1,2,3];
+  var array = ["one","two","three"];
   return (
     <Layout>
       <div>Home Page</div>
       <Dropdown label="text" options={array}/> 
-      <RadioButton label="text"/> 
-      <CheckBox label="text"/>
+      <RadioGroup options={array}/> 
+      <CheckboxGroup options={array}/>
     </Layout>
     );
 }
