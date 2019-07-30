@@ -1,16 +1,24 @@
 import React from 'react';
 
-const Dropdown = (label, {values}) => {
+class Dropdown extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      options: this.props.options || []
+    } 
+  }
   
   //function onChange(e) {}
-
-  return <select name={label}>
-            {values.map(value => (
-              <React.Fragment key={value.id}>
-                <option value= {value}>{value}</option>
-              </React.Fragment>
-            ))}
-          </select>;
+  render(){
+    var dropdownOptions = this.props.options.map((option) =>
+    <option value={option} key={option} >{option}</option>
+    ); 
+    return (
+    <select>
+          {dropdownOptions}
+    </select>);
+  }
 };
 
 export default Dropdown;
